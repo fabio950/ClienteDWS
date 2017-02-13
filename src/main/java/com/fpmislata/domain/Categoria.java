@@ -38,12 +38,12 @@ public class Categoria implements Serializable {
     private Set<Producto> productos;
     
     public Categoria() {
-        productos = new HashSet<Producto>();
+        productos = new HashSet<>();
     }
 
     public Categoria(String nombre) {
         this.nombre = nombre;
-        productos = new HashSet<Producto>();
+        productos = new HashSet<>();
     }
 
     public int getId() {
@@ -68,6 +68,31 @@ public class Categoria implements Serializable {
 
     public void setProductos(Set<Producto> productos) {
         this.productos = productos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Categoria other = (Categoria) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
 
     @Override

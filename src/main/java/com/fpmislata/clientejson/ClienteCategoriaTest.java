@@ -31,16 +31,16 @@ public class ClienteCategoriaTest {
         
         System.out.println("Lista de categorias del sistema");
         System.out.println("---------------------------");
-        //List<Categoria> lista = getListCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias");
-        //for (Categoria categoria : lista) {
-            //(System.out.println(categoria.toString());
-        //}
+        List<Categoria> lista = getListCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias");
+        for (Categoria categoria : lista) {
+            System.out.println(categoria.toString());
+        }
         System.out.println("----------------------------\n");
         
         
         System.out.println("Encontrar Categoría por ID");
         System.out.println("---------------------------");
-        Categoria categoria = getCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias/FindById/2");
+        //Categoria categoria = getCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias/FindById/2");
         //System.out.println("La categoria recuperada es: " + categoria.getId() + ", " + categoria.getNombre());
         System.out.println("----------------------------\n");
 
@@ -52,9 +52,10 @@ public class ClienteCategoriaTest {
         System.out.println("----------------------------\n");
         
         Categoria categoriaExistente = new Categoria();
-        categoriaExistente.setNombre("categoria modificada");
+        categoriaExistente.setId(8);
+        categoriaExistente.setNombre("asdf");
         System.out.println("Modificando una categoria en el sistema");
-        Categoria p3 = updateCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias/update/3", categoriaExistente);
+        //Categoria p3 = updateCategoria("http://localhost:8080/ProyectoFinal20162017-web/webservice/CategoriasService/Categorias/update/3", categoriaExistente);
         //System.out.println("La categoria modificada es ahora: " + p3.toString());
         System.out.println("----------------------------\n");     
         
